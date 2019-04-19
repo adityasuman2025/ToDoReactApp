@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>To-Do React App</title>
+	<title>To Do's React App</title>
 
 	<script src="js/babel.min.js"></script>
 	<script crossorigin src="js/react.development.js"></script>
@@ -9,10 +9,37 @@
 
 </head>
 <body>
-	
+	<div id="app"></div>
+
 <!------main script------>
 	<script type="text/babel">
-		
+		class App extends React.Component
+		{
+			state = {
+				todos: [
+					{id: 1, content: "buy milk"},
+					{id: 2, content: "play mario"}
+				]
+			}
+
+			render()
+			{
+				return(
+					<div className="app">
+						<h1>To Do's</h1>
+						<ListToDos todos={this.state.todos} />
+					</div>
+				)
+			}
+		}
+	</script>
+
+<!------list to do UI component----->
+	<script type="text/babel" src="js/listToDos.js"> </script>	
+
+<!------rendering-------->
+	<script type="text/babel">
+		ReactDOM.render(<App />, document.getElementById('app'));
 	</script>
 </body>
 </html>
