@@ -22,12 +22,40 @@
 				]
 			}
 
+			deleteToDo = (id) =>
+			{
+				var todos = this.state.todos.filter(todo =>
+				{
+					return todo.id != id;
+				});
+
+				this.setState(
+				{
+					todos: todos
+				})
+
+				console.log(id);
+			}
+
+			addToDo = (content) =>
+			{
+				var todo = {id: Math.random(), content: content};
+
+				let todos = [...this.state.todos, todo];
+
+				this.setState({
+					todos: todos
+				})
+			}
+
 			render()
 			{
 				return(
 					<div className="app">
 						<h1>To Do's</h1>
-						<ListToDos todos={this.state.todos} />
+						<ListToDos todos = {this.state.todos} deleteToDo = {this.deleteToDo} />
+
+						<AddToDO addToDo = {this.addToDo} />
 					</div>
 				)
 			}
@@ -36,6 +64,9 @@
 
 <!------list to do UI component----->
 	<script type="text/babel" src="js/listToDos.js"> </script>	
+
+<!------add to do UI component----->
+	<script type="text/babel" src="js/addToDo.js"> </script>	
 
 <!------rendering-------->
 	<script type="text/babel">
