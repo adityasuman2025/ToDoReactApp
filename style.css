@@ -1,0 +1,38 @@
+body
+{
+	font-family: arial; 
+}
+
+.app
+{
+	width: 60%;
+	margin: auto;
+	background: #f1f1f1;	
+	text-align: center;
+	box-shadow: 0px 0px 1px grey;
+	padding: 5px;
+}
+
+.app h1
+{
+	color: #0080ff;
+}
+
+.listToDoDiv
+{
+	padding: 10px;
+	border: 1px #0080ff solid;
+	margin: 3px;
+	cursor: pointer;
+}
+
+.AddToDoForm
+{
+	margin: 10px;
+}
+
+.AddToDoForm input
+{
+	height: 25px;
+	width: 300px;
+}

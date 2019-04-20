@@ -8,8 +8,8 @@ const ListToDos = (props) =>
 			todos.map(todo =>
 			{
 				return(
-					<div className="listToDoDiv" key={todo.id}>
-						<span onClick = {props.deleteToDo.bind(null, todo.id)} >{todo.content}</span>
+					<div className="listToDoDiv" key={todo.id} onClick = {props.deleteToDo.bind(null, todo.id)} >
+						{todo.content}
 					</div>
 				)
 			})
