@@ -29,6 +29,7 @@ body
 .AddToDoForm
 {
 	margin: 10px;
+	margin-top: 30px;
 }
 
 .AddToDoForm input
